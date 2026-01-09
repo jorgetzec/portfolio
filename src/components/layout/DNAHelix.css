@@ -1,0 +1,104 @@
+/* DNA Helix Animation Styles */
+:root {
+  --rotate-time: 8s; /* Slower rotation */
+  --rotate-delay: 0.15s;
+  --lines-color: rgba(229, 229, 229, 0.3); /* smoke-gray with opacity */
+  --dots-color: #E5E5E5; /* smoke-gray */
+}
+
+#dna {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  perspective: 1000px;
+  pointer-events: auto; /* Enable hover on container */
+  cursor: default;
+  z-index: -10;
+  overflow: visible; /* Allow bars to extend beyond viewport edges */
+}
+
+#dna > div {
+  position: absolute;
+  top: 50%;
+  width: 2px;
+  height: 300px;
+  margin-top: -150px;
+  margin-left: -1px; /* Center the 2px width bar */
+  background-color: var(--lines-color);
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  animation: rotation-paused var(--rotate-time) linear infinite;
+  animation-play-state: paused;
+  animation-delay: var(--animation-delay, 0s);
+  pointer-events: none; /* Don't block interactions */
+}
+
+/* Hover state - activate animation when hovering over hero section */
+#dna.dna-hover-active > div,
+#dna:hover > div {
+  animation-play-state: running !important;
+}
+
+.dna-dot-wrapper {
+  position: absolute;
+  left: 50%;
+  width: 10px;
+  z-index: 10;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+
+.dna-dot-top {
+  top: -10px;
+}
+
+.dna-dot-bottom {
+  bottom: -10px;
+}
+
+.dna-dot-inner {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--dots-color);
+  border-radius: 5px;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  animation: rotation-paused var(--rotate-time) linear infinite reverse;
+  animation-play-state: paused;
+  animation-delay: var(--animation-delay, 0s);
+}
+
+#dna.dna-hover-active .dna-dot-inner,
+#dna:hover .dna-dot-inner {
+  animation-play-state: running !important;
+}
+
+/* Animation delays are now set dynamically via CSS variables (--animation-delay) in JavaScript */
+
+@keyframes rotation-paused {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(359deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  #dna > div {
+    height: 250px;
+    margin-top: -125px;
+  }
+}
+
+@media (max-width: 768px) {
+  #dna > div {
+    height: 200px;
+    margin-top: -100px;
+  }
+}
+
