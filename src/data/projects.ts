@@ -276,5 +276,23 @@ Built with R and the WGCNA package. Includes example datasets, R scripts, and RS
     year: 2025,
     details: `A comprehensive bioinformatics pipeline focused on the regulatory landscape of GPD genes under salinity stress. The workflow includes Differential Expression Analysis (DESeq2), Weighted Gene Co-expression Network Analysis (WGCNA), Gene Ontology enrichment (topGO), and validation of findings using Random Forest machine learning models.`,
   },
+  {
+    id: 'docker-youtube-transcriber',
+    title: 'Docker YouTube Transcriber',
+    description: 'Professional Docker-based tool for downloading and transcribing YouTube videos with a robust recovery and resumption system.',
+    category: 'research-tools',
+    tags: ['Python', 'Docker', 'Transcription', 'Automation', 'YouTube', 'API'],
+    repo: 'https://github.com/jorgetzec/docker-youtube-transcriber-resumable',
+    status: 'active',
+    images: [],
+    year: 2024,
+    details: `A professional Docker-based tool for downloading audio from YouTube videos and transcribing them to text using Google Speech Recognition. 
+
+Key Features:
+- **Resumable System**: If interrupted, the process picks up exactly where it left off, identifying completed segments to avoid redundant work.
+- **Multilingual**: Supports transcription in Spanish, English, French, German, Italian, and Portuguese.
+- **Scalable**: Automatically splits large audio files into smaller segments for efficient processing.
+- **Containerized**: Fully Dockerized for easy deployment and consistent environments.`,
+  },
 ];
 
