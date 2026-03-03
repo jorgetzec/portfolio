@@ -79,6 +79,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                   <h2 className="text-3xl font-heading text-charcoal mb-2">
                     {project.title}
                   </h2>
+                  {project.citation && (
+                    <p className="text-md italic text-charcoal/60 mb-1">
+                      {project.citation}
+                    </p>
+                  )}
                   {project.year && (
                     <span className="text-sm text-charcoal/50 font-mono">
                       {project.year}
@@ -142,6 +147,31 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                   </motion.div>
                 );
               })()}
+
+              {/* Publication Metadata */}
+              {(project.authors || project.doi) && (
+                <div className="mb-8 p-4 bg-smoke-gray/10 rounded-lg border border-smoke-gray/20">
+                  {project.authors && (
+                    <div className="mb-3">
+                      <span className="text-xs uppercase tracking-wider text-charcoal/40 font-semibold block mb-1">Authors</span>
+                      <p className="text-charcoal/80 text-sm">{project.authors.join(', ')}</p>
+                    </div>
+                  )}
+                  {project.doi && (
+                    <div>
+                      <span className="text-xs uppercase tracking-wider text-charcoal/40 font-semibold block mb-1">DOI</span>
+                      <a 
+                        href={`https://doi.org/${project.doi}`} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:underline text-sm font-mono"
+                      >
+                        {project.doi}
+                      </a>
+                    </div>
+                  )}
+                </div>
+              )}
 
               {/* Project Details (if available) */}
               {project.details && (
@@ -338,7 +368,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
                   className="flex-1"
                 >
                   <Button variant="outline" className="w-full">
-                    Live Demo
+                    {project.category === 'publications' ? 'View Publication' : 'Live Demo'}
                   </Button>
                 </a>
               )}

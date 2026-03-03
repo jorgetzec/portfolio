@@ -48,6 +48,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
         {/* Title and Description */}
         <h3 className="text-xl font-heading text-charcoal mb-2">{project.title}</h3>
+        
+        {project.citation && (
+          <p className="text-sm italic text-charcoal/60 mb-2">{project.citation}</p>
+        )}
+
         <p className="text-charcoal/70 mb-4 line-clamp-3">{project.description}</p>
 
         {/* Tags */}
