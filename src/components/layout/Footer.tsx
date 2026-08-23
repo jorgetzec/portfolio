@@ -27,6 +27,14 @@ export const Footer: React.FC = () => {
               LinkedIn
             </a>
             <a
+              href={personalInfo.scholar}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-charcoal/70 hover:text-reddish transition-colors"
+            >
+              Google Scholar
+            </a>
+            <a
               href={`mailto:${personalInfo.email}`}
               className="text-charcoal/70 hover:text-reddish transition-colors"
             >

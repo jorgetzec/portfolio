@@ -6,6 +6,7 @@ export interface PersonalInfo {
   email: string;
   github: string;
   linkedin: string;
+  scholar: string;
   available: boolean;
 }
 
@@ -17,6 +18,7 @@ export const personalInfo: PersonalInfo = {
   email: 'jorgetzec@gmail.com',
   github: 'https://github.com/jorgetzec',
   linkedin: 'https://www.linkedin.com/in/jorgetzec/',
+  scholar: 'https://scholar.google.com/citations?user=TS0mqAkAAAAJ&hl=es',
   available: true,
 };
 
