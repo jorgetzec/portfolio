@@ -54,6 +54,28 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: 'paper-inbox',
+    title: 'Paper Inbox',
+    description: 'Automated workflow that turns scientific papers (arXiv, DOI, PMC, URL, or title) into Spanish summary cards for Obsidian. Low token consumption and ready to use as an AI agent skill.',
+    category: 'research-tools',
+    tags: ['Python', 'Obsidian', 'LLM', 'Automation', 'Literature Review', 'OpenAlex', 'OpenAI'],
+    repo: 'https://github.com/jorgetzec/paper-inbox',
+    demo: '',
+    status: 'active',
+    images: [],
+    year: 2026,
+    featured: false,
+    details: `Paper Inbox is a system to keep up with the literature fast: paste a link (arXiv, DOI, URL, title, or BibTeX) and get a Spanish summary card ready to read in your Obsidian vault, covering what it's about, what was done, findings, impact, and relevance to your research. It includes a Mermaid diagram and table of the bioinformatic pipeline (stages → tools → function).
+
+Optimized for low token consumption (uses gpt-4o-mini by default, temperature 0.2, trimmed text).
+
+Pipeline: resolve (identifier → metadata + abstract) → summarize (LLM) → write_card (Obsidian .md note) → process_inbox (orchestrates over _inbox/) → digest (regenerates index.md and daily digests).
+
+Data sources are free and keyless: arXiv API, Crossref, OpenAlex, Semantic Scholar, and PubMed Central (HTML). The LLM only summarizes what these sources return and never invents data.
+
+Works as an agent skill for OpenCode, Codex, and Claude.`,
+  },
+  {
     id: 'gongora-castillo-lab',
     title: 'Góngora-Castillo Lab Website',
     description: 'Website for the Bioinformatics and Functional Genomics Laboratory at Cinvestav Mérida. Showcases lab research, projects, team members, publications, and outreach.',
